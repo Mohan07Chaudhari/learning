@@ -1,0 +1,87 @@
+<html>
+
+    <head>
+
+        <script>
+            function changeHeadText() {
+                document.getElementById("result").innerHTML = "Inline --> Head --> Script.";
+            }
+
+            function forInExample() {
+                const array = [1,2,3,4,5,6,7,8,9,10];  
+                let result = "";
+
+                for (const num in array) {
+                    result = result + " " + num;
+                }
+
+                document.getElementById("result").innerHTML = result;
+            }
+
+            function handleOnload() {
+                document.getElementById("result1").innerHTML = 'output1';
+                document.getElementById("result2").innerHTML = 'output2';
+            }
+        </script>
+
+        <style>
+            .pt {
+                padding-top: 2rem;
+            }
+
+            .pb {
+                padding-bottom: 2rem;
+            }
+
+            .pl {
+                padding-left: 10rem;
+            }
+
+            button {
+                margin: 1rem;
+            }
+
+            #mySpan {
+                margin-left: 10rem;
+            }
+
+        </style>
+    </head>
+
+    <body onload="handleOnload()">
+
+        <div class="pl">
+            <div class="pt pb">
+                <span id="result"> Hi Mohan </span>
+            </div>
+    
+            <div>
+                <button onclick="changeHeadText()"> Click Inline Head </button>
+                <button onclick="changeBodyText()"> Click Inline Body </button>
+                <button onclick="changeExtHeaderText()"> Click Ext Head </button>
+                <button onclick="changeExtBodyText()"> Click Ext Body </button>
+            </div>    
+
+            <div>
+                <button onclick="forInExample()"> for-in Example </button>
+            </div>    
+        </div>
+
+        <div class="pt pb">
+            <span id="result1"> </span>
+        </div>
+        <div class="pt pb">
+            <span id="result2"> </span>
+        </div>
+
+        <script>
+            function changeBodyText() {
+                document.getElementById("mySpan").innerHTML = "Inline --> Body --> Script.";
+            }
+        </script>    
+
+        <script src="index.js"></script>
+
+    </body>
+
+</html>
